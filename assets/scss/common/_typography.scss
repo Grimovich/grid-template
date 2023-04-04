@@ -42,6 +42,7 @@ h2 {
   color: $color-primary;
 
   font-family: $font-header;
+  font-weight: 700;
   line-height: 1.2em;
 
   @include lg-min {
@@ -84,4 +85,8 @@ a {
 
 p {
   color: $color-gray;
+}
+
+input:focus {
+  outline: none;
 }

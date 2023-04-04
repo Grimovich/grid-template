@@ -16,6 +16,7 @@
     @include md-min {
       display: none;
     }
+
     &-row {
       position: absolute;
       left: 0;
@@ -37,10 +38,11 @@
 
         transform-origin: left center;
       }
+
       &:nth-child(2) {
         top: 9px;
 
-        transform-origin: lheader-navbar__btn-roweft center;
+        transform-origin: left center;
       }
 
       &:nth-child(3) {
@@ -83,20 +85,23 @@
       @include unlist(0 (-$gap-sm) 0 0);
     }
     @include md {
+      display: none;
+
+      @include unlist;
+    }
+
+    &.-active {
       position: absolute;
       top: 100%;
       right: $gap;
 
-      display: none;
-
-      box-sizing: border-box;
+      display: block;
 
       text-align: right;
 
-      background-color: rgba($color-gray-dark, 0.8);
+      background-color: rgba($color-gray-dark, 0.9);
 
       @include box-shadow;
-      @include unlist;
     }
   }
 
@@ -109,6 +114,7 @@
   &__link {
     display: block;
 
+    transition: color 0.5s;
     letter-spacing: 0.1em;
 
     font-size: 1.125rem;

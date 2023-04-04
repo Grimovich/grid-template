@@ -19,74 +19,85 @@
     }
   }
 
-  .btn--primary {
-    width: 100%;
-
-    color: $color-white;
-    border-color: rgba($color-white, 0);
-    border-bottom-color: rgba($color-white, 0.2);
-    background-color: rgba($color-white, 0.1);
-
-    &:hover,
-    &:focus {
-      cursor: pointer;
-
-      border-color: $color-white;
-      background-color: $color-accent;
+  &__group {
+    &:nth-of-type(1) {
+      @include md-sm {
+        grid-column: 1 / span 2;
+      }
     }
 
-    &:disabled {
+    &-input {
+      width: 100%;
+      height: 60px;
+      padding-right: $gap-lg;
+      padding-left: $gap-lg;
+
+      transition: background-color 0.5s, border-color 0.5s;
+      letter-spacing: 0.15em;
+
+      color: $color-white;
+      border: 2px solid rgba($color-white, 0);
+      border-bottom-color: rgba($color-white, 0.25);
+      background-color: rgba($color-white, 0.05);
+
+      font-size: 1.125rem;
+
+      &::placeholder {
+        color: #5c7588;
+      }
+
       &:hover,
       &:focus {
-        cursor: initial;
+        border-color: rgba($color-white, 0.15);
+        border-bottom-color: $color-white;
+        background-color: rgba($color-white, 0.15);
 
-        opacity: 0.3;
-        border-color: rgba($color-white, 0);
-        border-bottom-color: rgba($color-white, 0.2);
-        background-color: rgba($color-white, 0.1);
+        &::placeholder {
+          color: #8c9bab;
+        }
+      }
+    }
+
+    &-btn {
+      transition: background-color 0.5s, border-color 0.5s;
+
+      background-color: rgba($color-white, 0.1);
+
+      width: 100%;
+      height: 60px;
+      padding-right: $gap-lg;
+      padding-left: $gap-lg;
+
+      transition: background-color 0.5s, border-color 0.5s;
+      letter-spacing: 0.1em;
+
+      color: $color-white;
+      border: 2px solid rgba($color-white, 0);
+      border-bottom-color: rgba($color-white, 0.25);
+      background-color: rgba($color-white, 0.05);
+
+      font-size: 1.125rem;
+
+      &:hover,
+      &:focus {
+        border: 2px solid $color-white;
+        background-color: $color-accent;
       }
     }
   }
 }
 
-.form-item {
-  @include md-sm {
-    &:nth-of-type(1) {
-      grid-column: 1 / span 2;
-    }
-  }
+.visually-hidden {
+  position: absolute;
 
-  &__input {
-    display: block;
+  overflow: hidden;
 
-    width: 100%;
-    height: 60px;
-    padding-right: $gap-lg;
-    padding-left: $gap-lg;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
 
-    transition: background-color 0.5s, border-color 0.5s;
-    letter-spacing: 0.15em;
+  white-space: nowrap;
 
-    color: $color-white;
-    border: 2px solid rgba($color-white, 0);
-    border-bottom-color: rgba($color-white, 0.25);
-    background-color: rgba($color-white, 0.05);
-
-    font-size: 1.125rem;
-
-    &::placeholder {
-      color: $color-gray;
-    }
-
-    &:hover,
-    &:focus {
-      border-color: rgba($color-white, 0.15);
-      border-bottom-color: $color-white;
-      background-color: rgba($color-white, 0.15);
-
-      &::placeholder {
-        color: lighten($color-gray, 15%);
-      }
-    }
-  }
+  border: 0;
 }
