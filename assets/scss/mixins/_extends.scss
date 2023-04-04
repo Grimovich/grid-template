@@ -8,6 +8,22 @@
   margin-inline: auto;
 }
 
+%btn-container {
+  @include sm-min {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn--primary {
+    @include sm-min {
+      min-width: 350px;
+    }
+    @include sm {
+      width: 100%;
+    }
+  }
+}
+
 %section {
   @include lg-min {
     padding-top: $gap-x5;
@@ -24,21 +40,5 @@
 
   h2 {
     margin-top: 0;
-  }
-}
-
-%btn-container {
-  @include sm-min {
-    display: flex;
-    justify-content: center;
-  }
-
-  .btn--primary {
-    @include sm-min {
-      min-width: 350px;
-    }
-    @include sm {
-      width: 100%;
-    }
   }
 }
